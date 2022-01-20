@@ -1,17 +1,12 @@
 import math
 
-def gridas_izmaksa(cena, linoleja_platums, telpas_platums, telpas_garums):
-    telpas_izmers = math.ceil(telpas_garums) * math.ceil(telpas_platums)
-    izmaksa = cena * telpas_izmers / linoleja_platums
+cena = float(input("Ievadīt linoleja cenu (EUR/m^2): "))
+Rplatums = float(input("Ievadīt linoleja ruļļa platumu: "))
+Tplatums = float(input("Ievadīt telpas platumu: "))
+Tgarums = float(input("Ievadīt telpas garumu: "))
 
-    return izmaksa
+rulli = math.ceil(Tgarums / Rplatums)
+Tizmers = math.ceil(Tplatums * Tgarums)
+cena2 = (Tizmers * cena / rulli)
 
-cena1 = 2.25
-linoleja_platums1 = 2.0
-platums1 = 5.25
-garums1 = 6.0
-
-print("izklājot garumā:")
-print(gridas_izmaksas(cena1, linoleja_platums1, platums1, garums1))
-print("izklājot platumā")
-print(gridas_izmaksas(cena1, linoleja_platums1, garums1, platums1))
+print(cena2)
